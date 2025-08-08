@@ -66,7 +66,7 @@ function analyzeSalesData(data, options) {
         }
     }
 
-     // @TODO: Проверка наличия опций
+    // @TODO: Проверка наличия опций
     const { calculateRevenue, calculateBonus } = options; 
     
     if (!calculateRevenue || !calculateBonus) {
@@ -118,7 +118,7 @@ function analyzeSalesData(data, options) {
         })
     })
     // @TODO: Сортировка продавцов по прибыли
-    const sortedSellers = sellerStats.toSorted((a, b) => b.profit - a.profit);
+    const sortedSellers = [...sellerStats].sort((a, b) => b.profit - a.profit);
     
     // @TODO: Назначение премий на основе ранжирования
     sortedSellers.forEach((seller, index) => {
